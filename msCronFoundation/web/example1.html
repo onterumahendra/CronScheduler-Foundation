@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>msCron | GET CRON</title>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="css/foundation.min.css">
+    </head>
+    <body>
+        <div class="row">
+            <h2 class="text-center" style="color:#3adb76;">Getting the CRON Expression..!</h2>
+            <div id="cron1"></div>
+
+            <div class="" style="padding-top: 30px;">
+                <div class="small-6">
+                    <div class="input-group">
+                        <input class="input-group-field" type="text" id="myCronValue">
+                        <div class="input-group-button">
+                            <input type="submit" id="myButton" class="button hollow" value="GET CRON">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <script src="js/jquery.js"></script>
+        <script src="js/foundation.min.js"></script>
+        <script src="js/msCron.js"></script>
+        <script>
+            var cron = $("#cron1").msCron();
+            $(document).on("click", "#myButton", function () {
+                $("#myCronValue").val(cron.getCron);
+
+            });
+
+            $(document).foundation();
+        </script>
+    </body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>msCron | SET CRON</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="css/foundation.min.css">
+    </head>
+    <body>
+        <div class="row">
+            <h2 class="text-center" style="color:#3adb76;">Populating the CRON Expression..!</h2>
+            <div style="padding-top: 30px;">
+                <div class="small-3 columns">
+                    <input type="text" value="0 0/1 * 1/1 * ? *" class="form-control" id="myCronValue" placeholder="Please enter CRON Expression"> </div>
+                <div class="small-3 columns">
+                    <select class="form-control">
+                        <option value="MINUTES">MINUTES</option>
+                        <option value="HOURLY">HOURLY</option>
+                        <option value="DAILY">DAILY</option>
+                        <option value="WEEKLY">WEEKLY</option>
+                        <option value="MONTHLY">MONTHLY</option>
+                        <option value="YEARLY">YEARLY</option>
+                    </select>
+                </div>
+                <div class="small-3 columns"><button id="myButton" class="hollow button">POPULATE CRON</button></div>
+            </div>
+
+        </div>
+        <div class="row">
+            <div id="cronSection"></div>
+        </div>
+        <script src="js/jquery.js"></script>
+        <script src="js/foundation.min.js"></script>
+        <script src="js/msCron.js"></script>
+        <script>
+            $(document).on("click", "#myButton", function () {
+                $("#cronSection").msCron({
+                    setCron: $("#myCronValue").val(),
+                    activeTab: $("select option:selected").val()
+                });
+            });
+             $(document).foundation();
+        </script>
+    </body>
+</html>
